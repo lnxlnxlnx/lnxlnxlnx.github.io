@@ -117,6 +117,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 0 15px var(--primary-color);
             transform: translateX(250px);
+            font-style: normal; /* 添加这一行确保文本正常朝向 */
         }
 
         .node:hover {
@@ -387,11 +388,7 @@
             </div>
         </div>
         
-        <div class="subtitle">
-            动态图解，一键运行的马克思主义发展史
-        </div>
-        
-        <button class="cta-button" id="contemporaryImpactBtn">
+        <button class="cta-button" id="contemporaryImpactBtn" onclick="showContemporaryImpact()">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M15 8L12 12L9 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -479,37 +476,6 @@
     </div>
 
     <script>
-        // 创建星星背景
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const starsCount = 200;
-            
-            for (let i = 0; i < starsCount; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                
-                // 随机位置
-                const x = Math.random() * 100;
-                const y = Math.random() * 100;
-                
-                // 随机大小
-                const size = Math.random() * 3;
-                
-                // 随机动画延迟
-                const delay = Math.random() * 2;
-                
-                star.style.left = `${x}%`;
-                star.style.top = `${y}%`;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                star.style.animationDelay = `${delay}s`;
-                
-                starsContainer.appendChild(star);
-            }
-        }
-        
-        // 页面加载完成后创建星星
-        window.addEventListener('load', createStars);
 
         // 隐藏中央按钮
         function hideCentralButton() {

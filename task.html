@@ -128,6 +128,40 @@
         .section.active .hidden-content {
             display: block;
         }
+
+        .interactive-element {
+            background-color: var(--neon-blue);
+            color: #000;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .interactive-element:hover {
+            transform: scale(1.05);
+        }
+
+        .interactive-element:active {
+            transform: scale(0.95);
+        }
+
+        .link-button {
+            display: inline-block;
+            background-color: var(--cyber-purple);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: transform 0.3s;
+        }
+
+        .link-button:hover {
+            transform: translateX(10px);
+        }
     </style>
 </head>
 <body>
@@ -151,6 +185,7 @@
             <div class="hidden-content">
                 <p>马克思的"商品拜物教"揭示了商品在资本主义社会中的神秘化现象，即商品的价值被赋予了某种超自然的属性，掩盖了其背后的社会关系。这种现象在数字时代尤为明显，例如，直播带货中的商品往往被包装成具有某种"魔力"的物品，吸引消费者购买。</p>
                 <p>"剩余价值"是马克思政治经济学的核心概念，指的是劳动者创造的价值超过其自身劳动力价值的部分，这部分价值被资本家无偿占有。在当代，996工作制正是资本家榨取剩余价值的现代版本。</p>
+                <a href="https://example.com/marx-commodity-fetishism" class="link-button">了解更多</a>
             </div>
         </div>
 
@@ -163,6 +198,7 @@
             <div class="hidden-content">
                 <p>"共同富裕"是中国乡村振兴战略的重要目标，旨在通过缩小城乡差距、提高农村居民收入水平，实现社会的整体富裕。这与马克思主义追求的社会公平和共同富裕的理念一脉相承。</p>
                 <p>欧洲左翼政党提出的数字税改革倡议，旨在对大型科技公司的数字业务征税，以减少数字鸿沟和财富不平等。这种政策尝试正是马克思主义在当代的"版本迭代"。</p>
+                <a href="https://example.com/marx-common-prosperity" class="link-button">了解更多</a>
             </div>
         </div>
 
@@ -175,6 +211,7 @@
             <div class="hidden-content">
                 <p>气候危机是资本主义无限增殖逻辑的直接后果。资本追求利润最大化的本性导致了对自然资源的过度开发和环境破坏。马克思主义提醒我们，如果不改变这种逻辑，环境危机将不可避免。</p>
                 <p>算法垄断是数字时代的新型剥削形式，大型科技公司通过算法控制市场、剥削劳动者和消费者。马克思主义的预警机制提示我们，这种垄断将导致社会不平等的进一步加剧。</p>
+                <a href="https://example.com/marx-climate-crisis" class="link-button">了解更多</a>
             </div>
         </div>
 
@@ -185,13 +222,29 @@
             <div class="hidden-content">
                 <p>马克思主义不是过时的蒸汽机，而是可以适配智能时代的量子计算机。它为我们提供了一种批判性思维工具，帮助我们在快速变化的技术环境中保持清醒，识别和解决社会问题。</p>
                 <p>只要我们保持思维的开放性，这个诞生在工业革命时期的思想体系，反而可能成为打开未来之门的密钥。</p>
+                <a href="https://example.com/marxism-future" class="link-button">了解更多</a>
             </div>
+        </div>
+
+        <div class="interactive-element" onclick="showInteractiveContent()">
+            点击这里查看马克思主义对经济发展的贡献
+        </div>
+
+        <div id="interactive-content" style="display: none; padding: 20px; background-color: rgba(0, 243, 255, 0.1); border-radius: 10px; margin-top: 20px;">
+            <h2>马克思主义对经济发展的贡献</h2>
+            <p>马克思主义为经济发展提供了深刻的洞察。它揭示了资本主义经济周期性危机的根源，并提出了通过社会变革实现经济稳定和可持续发展的路径。</p>
+            <p>在当代，马克思主义的经济理论继续为政策制定者提供灵感。例如，北欧国家通过实施高福利政策，成功减少了贫富差距，提高了社会的整体幸福感。</p>
+            <a href="https://example.com/marxism-economics" class="link-button">了解更多</a>
         </div>
     </div>
 
     <script>
         function toggleContent(element) {
             element.classList.toggle('active');
+        }
+
+        function showInteractiveContent() {
+            document.getElementById('interactive-content').style.display = 'block';
         }
     </script>
 </body>

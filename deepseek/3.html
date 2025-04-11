@@ -1,0 +1,24 @@
+// 在<script>内新增交互功能
+    function animateChart() {
+        document.querySelectorAll('.bar').forEach(bar => {
+            bar.style.height = Math.min(parseInt(bar.style.height) + 20, 100) + "%"
+        });
+    }
+    
+    function showCitation(text) {
+        const popup = document.createElement('div');
+        popup.className = 'citation-popup';
+        popup.textContent = text;
+        document.body.appendChild(popup);
+        setTimeout(() => popup.remove(), 2000);
+    }
+    
+    // 增加锚点跳转动画
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });

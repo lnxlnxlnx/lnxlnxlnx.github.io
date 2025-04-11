@@ -108,8 +108,6 @@
 
         .node {
             position: absolute;
-            width: 80px;
-            height: 80px;
             background-color: var(--node-color);
             border-radius: 50%;
             display: flex;
@@ -164,6 +162,8 @@
             align-items: center;
             gap: 10px;
             margin-top: 20px;
+            position: absolute;
+            z-index: 100;
         }
 
         .cta-button:hover {
@@ -305,13 +305,9 @@
     <div class="hero">
         <div class="stars" id="stars"></div>
         
-        <div class="astronaut">
-            <img src="https://cdn-icons-png.flaticon.com/512/2949/2949081.png" alt="宇航员">
-        </div>
-        
         <div class="nodes">
             <!-- 节点1: 《资本论》 -->
-            <div class="node" style="transform: rotate(0deg) translateX(250px);">
+            <div class="node" style="transform: rotate(0deg) translateX(250px); width: 100px; height: 100px;">
                 <span>《资本论》</span>
             </div>
             <div class="node-content">
@@ -321,7 +317,7 @@
             </div>
             
             <!-- 节点2: 巴黎公社 -->
-            <div class="node" style="transform: rotate(45deg) translateX(250px);">
+            <div class="node" style="transform: rotate(45deg) translateX(250px); width: 100px; height: 100px;">
                 <span>巴黎公社</span>
             </div>
             <div class="node-content">
@@ -331,7 +327,7 @@
             </div>
             
             <!-- 节点3: 十月革命 -->
-            <div class="node" style="transform: rotate(90deg) translateX(250px);">
+            <div class="node" style="transform: rotate(90deg) translateX(250px); width: 100px; height: 100px;">
                 <span>十月革命</span>
             </div>
             <div class="node-content">
@@ -341,7 +337,7 @@
             </div>
             
             <!-- 节点4: 中国革命 -->
-            <div class="node" style="transform: rotate(135deg) translateX(250px);">
+            <div class="node" style="transform: rotate(135deg) translateX(250px); width: 100px; height: 100px;">
                 <span>中国革命</span>
             </div>
             <div class="node-content">
@@ -351,7 +347,7 @@
             </div>
             
             <!-- 节点5: 改革开放 -->
-            <div class="node" style="transform: rotate(180deg) translateX(250px);">
+            <div class="node" style="transform: rotate(180deg) translateX(250px); width: 100px; height: 100px;">
                 <span>改革开放</span>
             </div>
             <div class="node-content">
@@ -361,7 +357,7 @@
             </div>
             
             <!-- 节点6: 21世纪马克思主义 -->
-            <div class="node" style="transform: rotate(225deg) translateX(250px);">
+            <div class="node" style="transform: rotate(225deg) translateX(250px); width: 100px; height: 100px;">
                 <span>21世纪马克思主义</span>
             </div>
             <div class="node-content">
@@ -371,7 +367,7 @@
             </div>
             
             <!-- 节点7: 数字时代马克思主义 -->
-            <div class="node" style="transform: rotate(270deg) translateX(250px);">
+            <div class="node" style="transform: rotate(270deg) translateX(250px); width: 100px; height: 100px;">
                 <span>数字时代</span>
             </div>
             <div class="node-content">
@@ -381,7 +377,7 @@
             </div>
             
             <!-- 节点8: 共同富裕 -->
-            <div class="node" style="transform: rotate(315deg) translateX(250px);">
+            <div class="node" style="transform: rotate(315deg) translateX(250px); width: 100px; height: 100px;">
                 <span>共同富裕</span>
             </div>
             <div class="node-content">
@@ -395,7 +391,7 @@
             动态图解，一键运行的马克思主义发展史
         </div>
         
-        <button class="cta-button" onclick="showContemporaryImpact()">
+        <button class="cta-button" id="contemporaryImpactBtn">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M15 8L12 12L9 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -515,6 +511,16 @@
         // 页面加载完成后创建星星
         window.addEventListener('load', createStars);
 
+        // 隐藏中央按钮
+        function hideCentralButton() {
+            document.getElementById('contemporaryImpactBtn').style.display = 'none';
+        }
+
+        // 显示中央按钮
+        function showCentralButton() {
+            document.getElementById('contemporaryImpactBtn').style.display = 'block';
+        }
+
         // 显示当代影响内容
         function showContemporaryImpact() {
             const content = document.getElementById('contemporaryImpact');
@@ -535,6 +541,12 @@
         function showInteractiveContent() {
             document.getElementById('interactive-content').style.display = 'block';
         }
+
+        // 为每个节点添加鼠标事件监听器
+        document.querySelectorAll('.node').forEach(node => {
+            node.addEventListener('mouseover', hideCentralButton);
+            node.addEventListener('mouseout', showCentralButton);
+        });
     </script>
 </body>
 </html>
